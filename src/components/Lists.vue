@@ -1,0 +1,50 @@
+<template>
+  <div>
+    New List: <input @keydown.enter="addList" type="text" v-model.trim="newListName">
+    <div class="Lists">
+      <div :key="index" v-for="(list, index) in lists">
+        <List :index="index" :list="list" :deleteList="deleteList" :updateList="updateList"></List>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import List from "./List";
+
+export default {
+  data() {
+    return {
+      lists: this.$root.$data.lists,
+      newListName: ""
+    };
+  },
+  methods: {
+    addList() {
+      if (this.newListName) {
+        this.$root.$data.lists.push({ name: this.newListName, items: [] });
+        this.newListName = "";
+      }
+    },
+    deleteList(index) {
+      this.$root.$data.lists.splice(index, 1);
+    },
+    updateList(index, name) {
+      this.$root.$data.lists[index].name = name;
+      this.$forceUpdate();
+    }
+  },
+  components: {
+    List
+  }
+};
+</script>
+
+<style scoped>
+.Lists {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+</style>
