@@ -44,9 +44,17 @@ export default {
 .Lists {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
-  grid-auto-columns: 200px;
   margin: 20px 0;
+}
+@media (min-width: 768px) {
+  .Lists {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin: 20px 0;
+  }
 }
 </style>
