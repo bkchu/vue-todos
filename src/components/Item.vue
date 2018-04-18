@@ -1,9 +1,9 @@
 <template>
   <div class="Item">
     <p>{{item}}</p>
+    <input @keydown.enter="toggleEdit(index)" v-if="editing" type="text" v-model="newValue" >
     <button @click="deleteItem(index)">Delete</button>
     <button @click="toggleEdit(index)">{{editing ? "Save" : "Edit"}}</button>
-    <input @keydown.enter="toggleEdit(index)" v-if="editing" type="text" v-model="newValue" >
   </div>
 </template>
 
@@ -36,7 +36,8 @@ export default {
 <style scoped>
 .Item {
   width: 200px;
-  margin: 20px 0;
+  margin: 10px 0;
+  padding: 10px;
   border: 1px solid black;
 }
 </style>
