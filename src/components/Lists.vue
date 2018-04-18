@@ -48,7 +48,5 @@ export default {
   grid-gap: 10px;
   grid-auto-columns: 200px;
   margin: 20px 0;
-  overflow-x: auto;
-  text-align: center;
 }
 </style>

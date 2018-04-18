@@ -51,10 +51,12 @@ export default {
 }
 
 .Items__items {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 200px;
+  grid-gap: 10px;
   justify-content: center;
-  align-items: center;
+  margin: 20px 0;
 }
 </style>
 

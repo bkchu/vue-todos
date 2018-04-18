@@ -35,8 +35,6 @@ export default {
 
 <style scoped>
 .Item {
-  width: 200px;
-  margin: 10px 0;
   padding: 10px;
   border: 1px solid black;
 }
